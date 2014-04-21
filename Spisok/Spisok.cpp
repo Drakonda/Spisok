@@ -3,22 +3,25 @@
 #include <locale.h>
 using namespace std;
  
-class Node
+/// \file Spisok.cpp
+
+/// Struktura spiska
+struct Node
 {
-public:
     int number;
     Node* next;
 };
  
+/// \fn osnovnaya funkciya
 void main()
 {
     Node* head = NULL;
     Node* lastPtr = NULL;
     short action = -1;
-	setlocale(LC_ALL,"rus");
+	setlocale(LC_ALL,"rus");  /// Delaem vivid po russki
     while (1)
     {
-        cout<<"1. Добавить Элемент\n";
+        cout<<"1. Добавить Элемент\n";  /// Menu
         cout<<"2. Просмотр Списка\n";
         cout<<"3. Поиск Элемента\n";
         cout<<"4. Удалить Элемент\n";
@@ -26,13 +29,13 @@ void main()
         cout<<"0. Выход\n\n";
         cout<<"Ваш Выбор: ";
         cin>>action;
-        if (action == 0)
+        if (action == 0)  /// Vixod iz programm
         {
             system("CLS");
             break;
         }
  
-        if (action == 1)
+        if (action == 1) /// Add element
         {
             system("CLS");
             Node* ptr = new Node;
@@ -54,7 +57,7 @@ void main()
             continue;
         }
  
-        if (action == 2)
+        if (action == 2)  /// Prosmotor spiska
         {
             Node* ptr = NULL;
             system("CLS");
@@ -80,7 +83,7 @@ void main()
             continue;
         }
  
-        if (action == 3)
+        if (action == 3)  /// Ishem element
         {
             Node* ptr = NULL;
             int key = -1;
@@ -114,7 +117,7 @@ void main()
             continue;
         }
  
-        if (action == 4)
+        if (action == 4)  /// Delete element
         {
             system("CLS");
             Node* ptrDelete = NULL;         
@@ -137,7 +140,7 @@ void main()
             continue;
         }
  
-        if (action == 5)
+        if (action == 5)  /// Delete element po viboru
         {
             system("CLS");
             Node* ptrPrev = NULL;
@@ -181,7 +184,7 @@ void main()
             continue;
         }
  
-        if (action > 5)
+        if (action > 5)  /// if vibrali ne tot punkt menu
         {
             system("CLS");
             cout<<"\t!!! НЕВЕРНЫЙ ВЫБОР. ПОВТОРИТЕ ВВОД !!!\n\n";
